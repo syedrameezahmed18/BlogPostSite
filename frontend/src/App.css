@@ -1,0 +1,180 @@
+.header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(248, 247, 247);
+    border-bottom: 2px solid black;
+}
+
+.lefts{
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.thepostshead{
+    font-size: 20px;
+    font-weight: 500;
+}
+.lefts .heading {
+    font-size: 28px;
+    font-weight: 600;
+}
+.lefts a {
+    text-decoration: none;
+    color:black
+}
+.lefts a:hover{
+    text-decoration: none;
+    color:black
+}
+a{
+    text-decoration: none;
+    color:black
+}
+a:hover{
+    text-decoration: none;
+    color:black
+}
+.rights{
+    width:35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.registerform ,.loginform{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.registerform h2,.loginform h2{
+    text-align: center;
+}
+
+.registerform form,.loginform form{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+
+.wholog{
+    margin-top:5%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+.loged {
+    color:rgb(107, 172, 194)
+}
+
+.loged:hover{
+    cursor: pointer;
+    color:blue;
+}
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 2%;
+}
+.guidehead p {
+    font-size: 28px;
+    font-weight: 600;
+}
+.mainposts{
+    margin-top:5%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.configs{
+    width:90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+.configs p{
+    font-size: 30px;
+    font-weight:600
+    
+}
+.innest{
+    margin-top: -2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:60px;
+    width:30%;
+}
+
+.fetchedposts{
+    margin-top: 3%;
+   
+    width:90%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.cardupper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.holdup{
+    margin-top: 2%;
+    width:100%;
+}
+
+.we{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    width:200px;
+    
+}
+
+.addition{
+    margin-top: -2%;
+}
+
+.lk h2{
+    text-align: center;
+    margin-top: 3%;
+}
+.cov{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.controls{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:310px;
+    width: 70%;
+}
+.form-group .ok{
+    width:300px;
+}
+

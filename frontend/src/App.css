@@ -178,3 +178,14 @@ a:hover{
     width:300px;
 }
 
+.lasts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commcontainer {
+    margin-left: 5%;
+}
+

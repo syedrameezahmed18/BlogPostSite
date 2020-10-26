@@ -63,6 +63,8 @@ export default function Posts() {
     return post.title.toLowerCase().includes(search.toLowerCase())
 })
 
+    
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -125,6 +127,7 @@ export default function Posts() {
                             title={post.title}
                             time={post.time}
                             compoid={id}
+                            trueid={post.postid}
                         />
                     )
                 })

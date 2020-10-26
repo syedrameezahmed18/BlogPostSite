@@ -20,6 +20,12 @@ const Addpost = () => {
 
     const send = (e) => {
         e.preventDefault()
+
+        if(token === null || token ==="") {
+            alert("Guests cannot submit posts pls login");
+            return;
+        }
+
         if(title === '' || body ==='') {
             alert("incomplete post!")
             return;

@@ -44,4 +44,20 @@ router.route("/posts")
         })
       })
 
+router.route("/comments/:id")
+      .get((req,res)=>{
+        let thatpost = req.params.id;
+        let searchquery = `SELECT comment,commenttime from comments where postid = ${thatpost}`;
+        con.query(searchquery,(err,row,field)=>{
+            if(err) {
+                console.log(err)
+                res.send({error:{code:401,message:"unable to fetch"}})
+            }
+            else {
+                res.send(row);
+            }
+        })
+      })
+
+
 module.exports = router;

@@ -52,9 +52,20 @@ const Login = () => {
                         setusername(content.data.email);
                         settoken(content.data.token);
                         alert("Successfully LoggedIn User" + content.data.email)
+                        let truekey = content.data.adminkey;
                         console.log(content.data.token)
-                        history.push("/")
                         
+                        console.log(truekey + "adminkeytype");
+
+                        if (truekey === null || truekey === "" || truekey === undefined) {
+                            console.log(`tick tk`)
+                            history.push("/")
+                        }
+                        else{
+                        console.log('how am i executed');
+                            localStorage.setItem('adminsession',content.data.adminkey)
+                            history.push("/admin")
+                        }
                     }
                 })
         }

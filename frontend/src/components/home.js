@@ -9,8 +9,6 @@ const Home = () => {
     const history = useHistory()
     console.log(username);
     
-    
-
     return(<Fragment>
                 {
                     (username === ''||username === null) ? (

@@ -79,4 +79,18 @@ router.route("/comments/:id")
       })
 
 
+router.route("/allposts")
+        .get((req,res)=>{
+            let postquery=`SELECT postid,title,time from posts`;
+            con.query(postquery,(err,row,field)=>{
+                if(err) {
+                    console.log(err)
+                }
+                else{
+                    res.send(row);
+                }
+            })
+        })      
+
+
 module.exports = router;

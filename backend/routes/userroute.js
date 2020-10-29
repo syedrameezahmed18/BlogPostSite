@@ -65,6 +65,33 @@ router.route("/login")
         if(userMatch) {
             let savedPass = userMatch.password;
             let savedemail = userMatch.email;
+
+            //whether the logged person is an admin
+            console.log(userMatch.role);
+            if(userMatch.role === 'admin' || userMatch.role ==='Admin') {
+                if(pass === savedPass) {
+                console.log(`admin trying to log in`);
+                //special admin token
+                let specid = Math.random().toString(36).substring(2,8);
+                let speclimit = 60*3600; //1 day token lifetime
+                let specexpiry = Math.floor(Date.now()/1000)+speclimit;
+                let payload = {
+                    id:specid,
+                    exp: specexpiry,
+                }
+                let token = jwt.sign(payload, jwt_key);
+                let adminsignature = [... Array(10)]
+                .map((n)=>(Math.random()*36 | 0).toString(36)).join('')
+                console.log(adminsignature);
+                res.status(200).send({data:{token:token,email:savedemail,adminkey:adminsignature}})
+            }
+                else {res.status(401).send({
+                    error:{ code:401,message:'invalid username or password.'}
+                })}
+
+            }
+            else {
+                //the logged user is not an admin
             const passwordDidMatch = await bcrypt.compare(pass,savedPass);
             if(passwordDidMatch) {
                 let id = Math.random().toString(36).substring(2,8);
@@ -83,6 +110,7 @@ router.route("/login")
                 })
             }
         }
+        }
             //if user is not found
             else {
                 let fakepass = await `$2b$${saltRounds}$invaliduserlol`;
@@ -94,6 +122,19 @@ router.route("/login")
         })
    
     
+      })      
+
+router.route("/allusers")
+      .get((req,res)=>{
+          let fetchquery= `select id,name,email,role from users`
+          con.query(fetchquery,(err,row,field)=>{
+              if(err) {
+                  console.log(err)
+              }
+              else {
+              res.send(row)
+              }
+          })
       })      
 
 module.exports = router;      
